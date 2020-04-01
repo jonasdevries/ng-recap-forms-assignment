@@ -13,13 +13,10 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
-      <div class="row">
-        <div class="xs-col-12">
-          <span class="help-block" *ngIf="!subscriptionForm.valid && subscriptionForm.touched"> The form is not valid</span>
-        </div>
-      </div>
 
-      <form (ngSubmit)="onSubmit(subscriptionForm)" #subscriptionForm="ngForm" >
+
+      <form (ngSubmit)="onSubmit()" #subscriptionForm="ngForm" >
+
         <div class="form-group">
           <label htmlFor="email">
             Email
@@ -65,6 +62,7 @@
           <span class="help-block" *ngIf="!password.valid && password.touched">Password is not valid</span>
         </div>
         <div>
+          <p class="help-block" *ngIf="!subscriptionForm.valid && subscriptionForm.touched"> The form is invalid!</p>
           <button
             type="submit"
             [disabled]="!subscriptionForm.valid"
