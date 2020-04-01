@@ -8,7 +8,7 @@ import {NgForm} from '@angular/forms';
 })
 export class AppComponent {
 
-  @ViewChild('subscriptionForm') subscriptionForm: NgForm;
+  @ViewChild('subscriptionForm', {static: false}) subscriptionForm: NgForm;
   subscriptionData = {
     email: '',
     subscription: '',
@@ -22,9 +22,7 @@ export class AppComponent {
   onSubmit() {
     this.subscriptionFormSubmitted = true;
 
-    console.log(this.subscriptionForm.value.email);
-    console.log(this.subscriptionForm.value.subscription);
-    console.log(this.subscriptionForm.value.password);
+    console.log(this.subscriptionForm.value);
 
     this.subscriptionData.email = this.subscriptionForm.value.email;
     this.subscriptionData.subscription = this.subscriptionForm.value.subscription;
