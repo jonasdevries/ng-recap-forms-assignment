@@ -43,7 +43,7 @@
           <select
             name="subscription"
             id="subscription"
-            [ngModel]="'Advanced'"
+            [ngModel]="selectedSubscription"
             class="form-control" >
             <option *ngFor="let subscription of subscriptions" [value]="subscription">
               {{ subscription }}
