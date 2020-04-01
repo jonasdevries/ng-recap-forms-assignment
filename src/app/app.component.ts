@@ -9,14 +9,14 @@ import {NgForm} from '@angular/forms';
 export class AppComponent {
 
   @ViewChild('subscriptionForm') subscriptionForm: NgForm;
-
   subscriptionData = {
     email: '',
     subscription: '',
     password: ''
   };
-
   subscriptionFormSubmitted = false;
+
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
   subscription = 'Advanced';
 
   onSubmit(subscriptionForm: NgForm) {
